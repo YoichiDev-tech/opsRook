@@ -21,22 +21,23 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description: site.description,
+  applicationName: site.name,
   openGraph: {
     title: site.name,
     description: site.tagline,
-    locale: "en_GB",
+    locale: "en_US",
     type: "website",
     siteName: site.name,
     url: "/",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: site.name,
     description: site.tagline,
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 
@@ -46,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB">
+    <html lang="en">
       <body className={`${geistSans.variable} min-h-screen font-sans antialiased`}>
         <Header />
         <main>{children}</main>
