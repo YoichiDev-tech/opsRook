@@ -1,84 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Wrench, Building2, Truck, Headphones } from "lucide-react";
+import { Building2, Cloud, Code2, Database, FlaskConical } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Solutions",
-  description:
-    "How OpsRook helps field service, multi-site operations, logistics, and support teams run cleaner days.",
+  title: "Use cases",
+  description: "Illustrative AI infrastructure workflows for enterprise inference, AI product teams, and model evaluation.",
 };
 
-// Solutions — I map the product to the kinds of teams we actually serve
-// so a visitor can recognise themselves quickly.
-
 const solutions = [
-  {
-    icon: Wrench,
-    title: "Field service",
-    body: "Installs, repairs, and maintenance. Keep the board honest when jobs move, and keep customers informed without another phone call.",
-  },
-  {
-    icon: Building2,
-    title: "Multi-site operations",
-    body: "Several locations, one view of what is open and who is covering. Less “who owns this?” between sites.",
-  },
-  {
-    icon: Truck,
-    title: "Logistics & delivery",
-    body: "Routes and drops that change during the day. Status that the office and the driver share without WhatsApp chaos.",
-  },
-  {
-    icon: Headphones,
-    title: "Support & success",
-    body: "Tickets and follow-ups that need a clear owner. Simple handoffs when something leaves the support queue.",
-  },
+  { icon: Building2, title: "Enterprise AI teams", body: "Give platform engineering, security, and business owners a shared view of readiness, access, cost, and rollout progress." },
+  { icon: Code2, title: "AI product companies", body: "Reduce friction between an internal demo and a customer-facing feature by tracking workload fit, service health, and release gates." },
+  { icon: FlaskConical, title: "Model evaluation teams", body: "Compare workload requirements and performance assumptions before committing to a production footprint." },
+  { icon: Cloud, title: "Inference providers", body: "Make capacity, queue pressure, and workload routing easier to reason about across environments." },
+  { icon: Database, title: "Data-heavy platforms", body: "Coordinate data access, inference dependencies, and operational ownership around a single deployment plan." },
 ];
 
 export default function SolutionsPage() {
   return (
     <div className="bg-white">
       <section className="border-b border-ink-200 bg-ink-50">
-        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-          <p className="text-sm font-medium uppercase tracking-wider text-signal-700">
-            Solutions
-          </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink-950 sm:text-4xl">
-            Built for teams that leave the desk
-          </h1>
-          <p className="mt-4 text-ink-600">
-            OpsRook is a good fit when the work lives between the office and
-            the field — and when spreadsheets have started to break under volume.
-          </p>
+        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-signal-700">Use cases</p>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-ink-950 sm:text-5xl">Built for the messy middle between model demo and production.</h1>
+          <p className="mt-5 leading-relaxed text-ink-600">AI infrastructure purchases are technical and commercial at once. This fictional product concept focuses on the handoffs where teams lose time, capacity, and buying momentum.</p>
         </div>
       </section>
-
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-6 sm:grid-cols-2">
-          {solutions.map((s) => (
-            <div
-              key={s.title}
-              className="interactive-card rounded-2xl border border-ink-200 bg-ink-50 p-6 sm:p-8"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-signal-700 shadow-sm">
-                <s.icon className="h-5 w-5" />
-              </div>
-              <h2 className="mt-4 text-xl font-semibold text-ink-950">{s.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-ink-600">{s.body}</p>
-            </div>
-          ))}
+        <div className="grid gap-5 md:grid-cols-2">
+          {solutions.map(({ icon: Icon, title, body }) => <article key={title} className="interactive-card flex gap-4 rounded-2xl border border-ink-200 bg-ink-50 p-6 sm:p-7"><div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-signal-700 shadow-sm"><Icon className="h-5 w-5" /></div><div><h2 className="text-lg font-semibold text-ink-950">{title}</h2><p className="mt-2 text-sm leading-relaxed text-ink-600">{body}</p></div></article>)}
         </div>
-
-        <div className="mt-14 text-center">
-          <p className="text-ink-600">
-            Not sure if you fit? Tell us how the day runs — we will be direct.
-          </p>
-          <Link
-            href="/contact"
-            className="interactive-button mt-4 inline-flex rounded-lg bg-signal-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-signal-700"
-          >
-            Talk to us
-          </Link>
-        </div>
+        <div className="mt-12 rounded-2xl border border-signal-200 bg-signal-50 p-6 sm:p-8"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-signal-700">The business lens</p><h2 className="mt-3 text-2xl font-semibold text-ink-950">Technical performance only matters if the buying path works, too.</h2><p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-700">In the OpsRook-VI scenario, PrismWave Studio maps the journey from first enquiry through technical validation and production deployment. The two improvements target both sides of that journey.</p><Link href="/#results" className="interactive-button mt-5 inline-flex items-center rounded-lg bg-signal-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-signal-700">Review the before & after</Link></div>
       </section>
     </div>
   );
