@@ -22,7 +22,7 @@ The proposed improvements combine clearer lead routing and ownership with a shar
 | Pilot-to-paid conversion | 32% | 47% |
 | Qualified inbound leads | 18% | 29% |
 | Accelerator utilization | 41% | 76% |
-| Illustrative monthly new ARR | $42k | $65k |
+| Illustrative monthly recurring revenue (MRR) | $42k | $65k |
 
 These figures are scenario assumptions designed to explain the business logic and interface. They are not independently verified, audited, or guaranteed results. Actual results would depend on the company, its sales process, demand, pricing, and delivery constraints.
 
