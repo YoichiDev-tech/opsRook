@@ -1,41 +1,38 @@
-// I keep all shared product copy and constants in one place so the
-// site stays consistent and easy to update when the product evolves.
-
 export const site = {
-  name: "OpsRook",
-  tagline: "Operational software for teams that keep work moving",
+  name: "OpsRook-VI",
+  tagline: "AI infrastructure, built for production",
   description:
-    "OpsRook helps growing service and field teams run jobs, updates, and customer communication from one place.",
-  location: "Fictional case study · UK",
+    "A fictional AI infrastructure startup case study exploring how better lead qualification and faster inference deployment can unlock revenue growth.",
+  location: "Fictional company · Illustrative case study",
   email: "hello@opsrook.example",
-  phone: "+44 161 555 0190",
+  phone: "+1 415 555 0148",
   domain: "opsrook.example",
 };
 
 export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/product", label: "Product" },
-  { href: "/solutions", label: "Solutions" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/about", label: "About" },
+  { href: "/", label: "Overview" },
+  { href: "/product", label: "Platform" },
+  { href: "/solutions", label: "Use cases" },
+  { href: "/pricing", label: "Plans" },
+  { href: "/about", label: "Company" },
   { href: "/contact", label: "Contact" },
 ];
 
 export const features = [
   {
-    title: "Live job board",
-    body: "See every open job, who owns it, and what is blocked — without chasing spreadsheets.",
+    title: "Inference control plane",
+    body: "Route AI workloads across available compute capacity with clear health, queue, and utilization signals.",
   },
   {
-    title: "Customer updates",
-    body: "Send status messages your customers actually open. Templates that stay on-brand.",
+    title: "Capacity intelligence",
+    body: "See where accelerators are underused, where demand is spiking, and what the next workload will cost.",
   },
   {
-    title: "Team schedule",
-    body: "Plan the week, reassign in one click, and keep field and office in the same loop.",
+    title: "Production-ready pilots",
+    body: "Move teams from evaluation to a measured deployment with repeatable onboarding and clear success criteria.",
   },
   {
-    title: "Simple reporting",
-    body: "Know what shipped, what slipped, and where time goes — without a BI project.",
+    title: "Revenue operations",
+    body: "Connect inbound intent, technical qualification, pilot progress, and commercial follow-up in one workflow.",
   },
 ];

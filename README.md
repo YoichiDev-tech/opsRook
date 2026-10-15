@@ -1,98 +1,74 @@
-# OpsRook — operational software for teams that move
+# OpsRook-VI — AI infrastructure startup case study
 
-This is a fictional portfolio case study for an independent tech product website; it is not a live service.
+OpsRook-VI is a **fictional AI infrastructure startup concept** created by PrismWave Studio as public proof of work. The product positioning draws on the accelerated-computing and AI infrastructure ecosystem; it is not affiliated with NVIDIA or any other real company.
 
-We built it as a **case-study project** for PrismWave Studio — the standard of site we deliver
-for small and medium tech businesses that need to look credible, take demo requests, 
-and explain a product without drowning visitors in jargon.
+This project is not a live compute platform or a real client engagement. The before-and-after metrics on the website are clearly labeled illustrative scenario outputs, not measured company performance.
 
-It is not a live client. It is a realistic example of what we ship: clear structure, 
-product-led copy, working enquiry flow, and a stack that is easy to host and hand over.
+## The business scenario
 
+The fictional startup has strong technical interest but loses commercial momentum at two handoffs:
+
+1. **Slow lead qualification:** inbound enterprise enquiries wait in a shared inbox, technical fit is identified late, and high-intent prospects lose momentum.
+2. **Slow pilot-to-production delivery:** workload requirements, capacity visibility, and readiness checks live in separate places, extending pilots and leaving accelerator capacity underused.
+
+The proposed improvements combine clearer lead routing and ownership with a shared capacity/readiness view and repeatable pilot workflow.
+
+## Illustrative before-and-after model
+
+| Measure | Before | Modeled after |
+| --- | ---: | ---: |
+| Median lead response | 23 hours | 11 minutes |
+| Pilot deployment | 21 days | 6 days |
+| Pilot-to-paid conversion | 32% | 47% |
+| Qualified inbound leads | 18% | 29% |
+| Accelerator utilization | 41% | 76% |
+| Illustrative monthly recurring revenue (MRR) | $42k | $65k |
+
+These figures are scenario assumptions designed to explain the business logic and interface. They are not independently verified, audited, or guaranteed results. Actual results would depend on the company, its sales process, demand, pricing, and delivery constraints.
+
+## What the website demonstrates
+
+- Product positioning for a technically complex AI infrastructure offer
+- Product dashboard concept and responsive visual system
+- A clear narrative from business bottlenecks to proposed interventions and outcomes
+- Multi-page product, use-case, commercial, company, and portfolio contact flows
+- Explicit fictional-project disclosure and a direct CTA to PrismWave Studio
+- Responsive layouts, keyboard focus states, and reduced-motion support
 
 ## Stack
 
-- **Next.js 15** (App Router)
-- **React 19 + TypeScript**
-- **Tailwind CSS** (custom ink / signal palette)
-- **Supabase** (demo request storage)
-- **lucide-react** for icons
+- Next.js 15 App Router
+- React 19 and TypeScript
+- Tailwind CSS
+- lucide-react
+- Vercel-compatible deployment
 
-No page builders. No heavy design system lock-in. Code a junior can open and understand.
+The former demo-request integration is not used by the public UI. This fictional project does not accept enquiries on behalf of a nonexistent company.
 
+## Local development
 
-## What is included
+Requires Node.js compatible with the installed Next.js version.
 
-| **Home** | Problem, product snapshot, primary CTA |
-| **Product** | Capability blocks in plain language |
-| **Solutions** | Field service, multi-site, logistics, support |
-| **Pricing** | Three clear plans, no “contact us for everything” |
-| **About** | Company voice, independent UK product team |
-| **Contact** | Demo request form + email |
-
-Also included:
-
-- Sticky header with mobile menu and "Book a demo" CTA
-- Footer with product links and contact
-- Demo form -> API route -> Supabase `demo_requests` table
-- Contact API validates requests and fails explicitly if Supabase is not configured
-- Accessibility basics (focus rings, labels, semantic structure)
-- Per-page metadata, Open Graph/Twitter cards, sitemap and robots rules
-- Motion-safe card hover and focus feedback, with keyboard focus moving to real controls rather than informational cards
-- Baseline security response headers
-
-
-## Project structure
-
-```
-src/
-  app/
-    page.tsx           -> Home
-    product/           -> Product
-    solutions/         -> Solutions
-    pricing/           -> Pricing
-    about/             -> About
-    contact/           -> Contact + demo form
-    api/contact/       -> Server route -> Supabase
-  components/
-    Header.tsx
-    Footer.tsx
-    DemoForm.tsx
-  lib/
-    site.ts            -> Product copy & nav in one place
-    supabase.ts        -> Browser client + types
+```bash
+npm ci
+npm run lint
+npm run typecheck
+npm run build
+npm run dev
 ```
 
-We keep shared product text in `src/lib/site.ts` so the team can change tagline, email, or feature blurbs without hunting through every page.
+## Deployment
 
+1. Import the repository into Vercel or use the existing connected Vercel project.
+2. Set `NEXT_PUBLIC_SITE_URL` to the canonical HTTPS URL once the production domain is known.
+3. No Supabase credentials are required for the current public experience.
+4. Run the CI checks (dependency audit, lint, typecheck, and production build) before merging.
+5. Review the live preview at the deployment URL generated for the pull request.
 
-## Why this site exists (PrismWave)
+## Portfolio positioning
 
-Tech company sites often fall into two traps:
+Suggested description for PrismWave Studio:
 
-- Generic "AI-powered platform" language that says nothing
-- Or a template that looks like every other SaaS landing page
+> A fictional AI infrastructure startup case study. PrismWave Studio redesigned the product story around two modeled revenue bottlenecks—slow lead qualification and a prolonged pilot-to-production cycle—and built a responsive, production-minded product experience to communicate the proposed solution. Metrics are illustrative, not client results.
 
-This project goes the other way: specific problem, specific audience (service and field teams), one primary action (book a demo), and pricing that does not hide behind a form.
-
-Use it when you talk to leads:
-
-- "This is the kind of site we build for independent product companies."
-- "It demonstrates the product story and enquiry flow; backend, abuse protection, and legal/domain checks remain pre-launch tasks."
-
-
-## Production hand-off
-
-- Replace the dark product panel on the home page with real product screenshots when available.
-- Set `NEXT_PUBLIC_SITE_URL` to the canonical HTTPS domain used for deployment.
-- Configure `NEXT_PUBLIC_SUPABASE_URL` and the required server-only `SUPABASE_SERVICE_ROLE_KEY`. The API does not fall back to the public anon key. Never expose the service-role key with a `NEXT_PUBLIC_` prefix.
-- Apply `supabase-schema.sql` in the production Supabase project and verify a submitted request reaches `demo_requests`.
-- Configure an email notification workflow if demo requests need to alert the team; the current API stores requests but does not send email.
-- Add provider-backed rate limiting, email notifications, and a production privacy notice before collecting real customer data.
-- Run `npm run lint` and `npm run build` before deployment.
-- Comments in the code are written in first person so intent is clear when someone else opens the project.
-- Pricing numbers are illustrative for the case study — adjust for a real product.
-
-
-**Built by PrismWave Studio**  
-Web sites and revamps for small and medium businesses — including independent tech companies.
+**Built by PrismWave Studio** — product websites, internal tools, and conversion-focused web experiences.
