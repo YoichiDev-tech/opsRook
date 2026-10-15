@@ -4,7 +4,9 @@ import { site } from "@/lib/site";
 const routes = ["/", "/product", "/solutions", "/pricing", "/about", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || `https://${site.domain}`;
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : `https://${site.domain}`);
 
   return routes.map((route) => ({
     url: new URL(route, baseUrl).toString(),
