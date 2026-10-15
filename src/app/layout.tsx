@@ -5,18 +5,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
 
-// I use Geist for a clean product UI feel without pulling in heavy display fonts.
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
+const deploymentUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : `https://${site.domain}`);
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL
-      ? process.env.NEXT_PUBLIC_SITE_URL
-      : `https://${site.domain}`
-  ),
+  metadataBase: new URL(deploymentUrl),
   title: {
     default: `${site.name} — ${site.tagline}`,
     template: `%s · ${site.name}`,
