@@ -26,7 +26,7 @@ const beforeAfter = [
 ];
 
 const metrics = [
-  { label: "Illustrative monthly new ARR", before: "$42k", after: "$65k", change: "+55%" },
+  { label: "Illustrative monthly recurring revenue", before: "$42k", after: "$65k", change: "+55%" },
   { label: "Qualified inbound leads", before: "18%", after: "29%", change: "+11 pts" },
   { label: "Accelerator utilization", before: "41%", after: "76%", change: "+35 pts" },
 ];
@@ -167,7 +167,7 @@ export default function HomePage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {metrics.map((metric) => <div key={metric.label} className="rounded-2xl border border-ink-200 bg-white p-5 sm:p-6"><p className="text-sm text-ink-500">{metric.label}</p><div className="mt-4 flex items-end justify-between gap-3"><div><p className="text-xs text-ink-400">Before <span className="ml-1 font-medium text-ink-500">{metric.before}</span></p><p className="mt-1 text-xs text-ink-400">After <span className="ml-1 font-semibold text-ink-950">{metric.after}</span></p></div><span className="rounded-lg bg-emerald-50 px-2.5 py-1.5 text-sm font-semibold text-emerald-700">{metric.change}</span></div></div>)}
           </div>
-          <p className="mt-4 text-xs leading-relaxed text-ink-500">ARR means annual recurring revenue. The monthly new ARR figures are illustrative model outputs, not audited revenue or a promise of results. Actual outcomes depend on demand, pricing, sales execution, and delivery capacity.</p>
+          <p className="mt-4 text-xs leading-relaxed text-ink-500">MRR means monthly recurring revenue. These figures are illustrative model outputs, not audited revenue or a promise of results. Actual outcomes depend on demand, pricing, sales execution, and delivery capacity.</p>
         </div>
       </section>
 
