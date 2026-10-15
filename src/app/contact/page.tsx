@@ -1,80 +1,32 @@
 import type { Metadata } from "next";
-import { Mail, MapPin } from "lucide-react";
-import DemoForm from "@/components/DemoForm";
-import { site } from "@/lib/site";
+import Link from "next/link";
+import { ArrowUpRight, BriefcaseBusiness, Code2, Mail, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Book a OpsRook demo or send a message. We reply within one working day.",
+  title: "Work with PrismWave",
+  description: "Contact PrismWave Studio about product websites, internal tools, and conversion-focused web experiences.",
 };
+
+const projectTypes = [
+  { icon: Code2, title: "Product websites", body: "Clear positioning and polished user journeys for SaaS and software companies." },
+  { icon: BriefcaseBusiness, title: "Internal tools", body: "Dashboards and workflow interfaces that help teams see what needs attention." },
+  { icon: ShieldCheck, title: "Bottleneck-focused improvements", body: "Identify friction in a customer journey and build a practical, measurable response." },
+];
 
 export default function ContactPage() {
   return (
     <div className="bg-ink-50">
       <section className="border-b border-ink-200 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-          <p className="text-sm font-medium uppercase tracking-wider text-signal-700">
-            Contact
-          </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink-950 sm:text-4xl">
-            Book a demo
-          </h1>
-          <p className="mt-4 max-w-xl text-ink-600">
-            Tell us how your team runs the day. We will reply with a short
-            calendar link and a few questions so the demo stays useful.
-          </p>
+        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-signal-700">Work with PrismWave Studio</p>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-ink-950 sm:text-5xl">Build the system your next stage needs.</h1>
+          <p className="mt-5 leading-relaxed text-ink-600">OpsRook-VI is a portfolio simulation, not a live AI compute service. If you want a similar product website, workflow tool, or focused business improvement for your own company, contact PrismWave Studio directly.</p>
+          <a href="https://prismwave-studio.vercel.app" target="_blank" rel="noopener noreferrer" className="interactive-button mt-7 inline-flex items-center gap-2 rounded-lg bg-signal-600 px-5 py-3 text-sm font-semibold text-white hover:bg-signal-700">Visit PrismWave Studio <ArrowUpRight className="h-4 w-4" /></a>
         </div>
       </section>
-
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-5">
-          <div className="lg:col-span-3">
-            <div className="interactive-card rounded-2xl border border-ink-200 bg-white p-6 sm:p-8">
-              <h2 className="text-xl font-semibold text-ink-950">Request a demo</h2>
-              <p className="mt-1 text-sm text-ink-500">
-                Usually within one working day.
-              </p>
-              <div className="mt-6">
-                <DemoForm />
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-6 lg:col-span-2">
-            <div className="interactive-card rounded-2xl border border-ink-200 bg-white p-6">
-              <p className="text-xs font-semibold uppercase tracking-wider text-ink-500">
-                Email
-              </p>
-              <a
-                href={`mailto:${site.email}`}
-                className="mt-3 flex items-center gap-2 font-medium text-ink-900 hover:text-signal-700"
-              >
-                <Mail className="h-5 w-5 text-signal-600" />
-                {site.email}
-              </a>
-            </div>
-
-            <div className="interactive-card rounded-2xl border border-ink-200 bg-white p-6">
-              <p className="text-xs font-semibold uppercase tracking-wider text-ink-500">
-                Based
-              </p>
-              <div className="mt-3 flex gap-2 text-sm text-ink-700">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-signal-600" />
-                <span>{site.location}</span>
-              </div>
-            </div>
-
-            <div className="interactive-card rounded-2xl bg-ink-950 p-6 text-ink-100">
-              <p className="font-semibold text-white">What happens next</p>
-              <ol className="mt-3 list-decimal space-y-2 pl-4 text-sm text-ink-300">
-                <li>We reply with a calendar link.</li>
-                <li>20–30 minute walkthrough on your workflows.</li>
-                <li>Clear yes / no on fit — no pressure pitch.</li>
-              </ol>
-            </div>
-          </div>
-        </div>
+        <div className="grid gap-5 md:grid-cols-3">{projectTypes.map(({ icon: Icon, title, body }) => <article key={title} className="rounded-2xl border border-ink-200 bg-white p-6"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-signal-50 text-signal-700"><Icon className="h-5 w-5" /></div><h2 className="mt-4 font-semibold text-ink-950">{title}</h2><p className="mt-2 text-sm leading-relaxed text-ink-600">{body}</p></article>)}</div>
+        <div className="mt-8 rounded-2xl border border-ink-200 bg-white p-6 sm:p-8"><div className="flex items-start gap-4"><Mail className="mt-1 h-5 w-5 shrink-0 text-signal-700" /><div><h2 className="font-semibold text-ink-950">No simulated enquiry form</h2><p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-600">Because OpsRook-VI is fictional, this page does not collect demo requests or imply that a product team is waiting to respond. The call to action takes visitors to PrismWave Studio instead.</p><Link href="/about" className="mt-4 inline-flex text-sm font-semibold text-signal-700 hover:text-signal-800">Read the case-study methodology <span className="ml-1">→</span></Link></div></div></div>
       </section>
     </div>
   );
