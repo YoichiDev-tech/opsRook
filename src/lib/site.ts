@@ -2,11 +2,11 @@ export const site = {
   name: "OpsRook-VI",
   tagline: "AI infrastructure, built for production",
   description:
-    "A fictional AI infrastructure startup case study exploring how better lead qualification and faster inference deployment can unlock revenue growth.",
-  location: "Fictional company · Illustrative case study",
-  email: "hello@opsrook.example",
+    "AI infrastructure for teams moving from promising model workloads to reliable production revenue.",
+  location: "AI infrastructure · Enterprise inference",
+  email: "hello@opsrook.ai",
   phone: "+1 415 555 0148",
-  domain: "opsrook.example",
+  domain: "opsrook.ai",
 };
 
 export const navLinks = [
