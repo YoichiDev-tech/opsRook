@@ -6,7 +6,7 @@ export const site = {
   location: "AI infrastructure · Enterprise inference",
   email: "hello@opsrook.ai",
   phone: "+1 415 555 0148",
-  domain: "opsrook.ai",
+  domain: "northloop-kappa.vercel.app",
 };
 
 export const navLinks = [
