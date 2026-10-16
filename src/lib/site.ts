@@ -4,8 +4,6 @@ export const site = {
   description:
     "AI infrastructure for teams moving from promising model workloads to reliable production revenue.",
   location: "AI infrastructure · Enterprise inference",
-  email: "hello@opsrook.ai",
-  phone: "+1 415 555 0148",
   domain: "northloop-kappa.vercel.app",
 };
 
